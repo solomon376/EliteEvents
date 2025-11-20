@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml"
+      spacing="12" prefWidth="220" style="-fx-background-color:#1E1E1E; -fx-padding:16;">
+    <HBox spacing="8">
+        <Label text="Elite Events" style="-fx-text-fill:white; -fx-font-weight:700; -fx-font-size:16px;"/>
+    </HBox>
+
+    <Separator />
+
+    <VBox spacing="6">
+        <Button fx:id="navDashboard" text="Dashboard" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+        <Button fx:id="navBookings" text="Bookings" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+        <Button fx:id="navVenues" text="Venues" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+        <Button fx:id="navClients" text="Clients" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+        <Button fx:id="navVendors" text="Vendors" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+        <Button fx:id="navCalendar" text="Calendar" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button fx:id="navSettings" text="Settings" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+    <Button fx:id="navLogout" text="Logout" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+</VBox>
