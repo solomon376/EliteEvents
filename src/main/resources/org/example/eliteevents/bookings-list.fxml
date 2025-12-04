@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.eliteevents.controllers.BookingsListController"
+      spacing="12" style="-fx-padding:16;">
+
+    <HBox spacing="8">
+        <DatePicker fx:id="filterFrom"/>
+        <DatePicker fx:id="filterTo"/>
+        <ComboBox fx:id="filterVenue" promptText="Venue"/>
+        <ComboBox fx:id="filterEventType" promptText="Event Type"/>
+        <TextField fx:id="filterClient" promptText="Client name..."/>
+        <Button fx:id="btnSearch" text="Search"/>
+        <Button fx:id="btnExport" text="Export"/>
+    </HBox>
+
+    <TableView fx:id="tblBookings" prefHeight="520">
+        <columns>
+            <TableColumn fx:id="colId" text="Booking ID" prefWidth="90"/>
+            <TableColumn fx:id="colClient" text="Client" prefWidth="180"/>
+            <TableColumn fx:id="colEvent" text="Event Type" prefWidth="140"/>
+            <TableColumn fx:id="colVenue" text="Venue" prefWidth="160"/>
+            <TableColumn fx:id="colDateTime" text="Date / Time" prefWidth="220"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="110"/>
+            <TableColumn fx:id="colActions" text="" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <Pagination fx:id="pagination" maxPageIndicatorCount="7"/>
+</VBox>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.eliteevents.controllers.VendorsListController"
+      spacing="12" style="-fx-padding:16;">
+    <HBox spacing="8">
+        <Label text="Vendors" style="-fx-font-size:16px; -fx-font-weight:600;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="vendorSearch" promptText="Search vendors..."/>
+        <Button fx:id="btnAddVendor" text="Add Vendor"/>
+    </HBox>
+
+    <TableView fx:id="tblVendors" prefHeight="560">
+        <columns>
+            <TableColumn fx:id="colVendorName" text="Vendor" prefWidth="260"/>
+            <TableColumn fx:id="colVendorCategory" text="Category" prefWidth="180"/>
+            <TableColumn fx:id="colVendorContact" text="Contact Info" prefWidth="300"/>
+            <TableColumn fx:id="colVendorActions" text="" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

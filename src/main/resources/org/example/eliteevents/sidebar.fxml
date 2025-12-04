@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
+
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.control.Label?>
 
-<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml"
-      spacing="12" prefWidth="220" style="-fx-background-color:#1E1E1E; -fx-padding:16;">
-    <HBox spacing="8">
-        <Label text="Elite Events" style="-fx-text-fill:white; -fx-font-weight:700; -fx-font-size:16px;"/>
-    </HBox>
+<VBox spacing="12" style="-fx-background-color: #1E1E2E; -fx-padding:20;"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.eliteevents.SidebarController">
 
-    <Separator />
+    <!-- Main Navigation -->
+    <Button fx:id="btnDashboard" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="Dashboard" onAction="#onDashboard"/>
+    <Button fx:id="btnNewBooking" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="New Booking" onAction="#onNewBooking"/>
+    <Button fx:id="btnAllBookings" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="All Bookings" onAction="#onAllBookings"/>
 
-    <VBox spacing="6">
-        <Button fx:id="navDashboard" text="Dashboard" maxWidth="Infinity" style="-fx-text-fill:white;"/>
-        <Button fx:id="navBookings" text="Bookings" maxWidth="Infinity" style="-fx-text-fill:white;"/>
-        <Button fx:id="navVenues" text="Venues" maxWidth="Infinity" style="-fx-text-fill:white;"/>
-        <Button fx:id="navClients" text="Clients" maxWidth="Infinity" style="-fx-text-fill:white;"/>
-        <Button fx:id="navVendors" text="Vendors" maxWidth="Infinity" style="-fx-text-fill:white;"/>
-        <Button fx:id="navCalendar" text="Calendar" maxWidth="Infinity" style="-fx-text-fill:white;"/>
-    </VBox>
+    <Separator style="-fx-background-color: #444;"/>
 
-    <Region VBox.vgrow="ALWAYS"/>
+    <!-- Quick Add Section -->
+    <Label text="Quick Add" style="-fx-text-fill: #888; -fx-font-size: 12px; -fx-padding: 0 0 5 0;"/>
+    <Button fx:id="btnAddClient" style="-fx-pref-width:180; -fx-background-color: #3D7DFF; -fx-text-fill: white;" text="+ Add Client" onAction="#onAddClient"/>
+    <Button fx:id="btnAddVenue" style="-fx-pref-width:180; -fx-background-color: #3D7DFF; -fx-text-fill: white;" text="+ Add Venue" onAction="#onAddVenue"/>
+    <Button fx:id="btnAddVendor" style="-fx-pref-width:180; -fx-background-color: #3D7DFF; -fx-text-fill: white;" text="+ Add Vendor" onAction="#onAddVendor"/>
 
-    <Button fx:id="navSettings" text="Settings" maxWidth="Infinity" style="-fx-text-fill:white;"/>
-    <Button fx:id="navLogout" text="Logout" maxWidth="Infinity" style="-fx-text-fill:white;"/>
+
+    <Separator style="-fx-background-color: #444;"/>
+
+    <!-- Management Sections -->
+    <Button fx:id="btnVenues" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="Venues" onAction="#onVenues"/>
+    <Button fx:id="btnVendors" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="Vendors" onAction="#onVendors"/>
+    <Button fx:id="btnClients" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="Clients" onAction="#onClients"/>
+
+    <Button fx:id="btnCalendar" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="Calendar" onAction="#onCalendar"/>
+
+
+    <Separator style="-fx-background-color: #444;"/>
+
+    <!-- Other Sections -->
+    <Button fx:id="btnPayments" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="Payments" onAction="#onPayments"/>
+    <Button fx:id="btnSettings" style="-fx-pref-width:180; -fx-background-color: #2D2D3A; -fx-text-fill: white;" text="Settings" onAction="#onSettings"/>
+
 </VBox>

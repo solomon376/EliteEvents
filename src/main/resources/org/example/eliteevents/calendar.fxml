@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.eliteevents.controllers.CalendarController"
+      spacing="16" style="-fx-padding:20; -fx-background-color: #f8fafc;">
+
+    <!-- Header Section -->
+    <Label text="Booking Calendar" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+
+    <!-- Controls Section -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <VBox spacing="4">
+            <Label text="Filter by Venue" style="-fx-font-size: 11px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+            <ComboBox fx:id="calendarVenueFilter" promptText="All Venues" prefWidth="150"/>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <VBox spacing="4">
+            <Label text="View Mode" style="-fx-font-size: 11px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+            <HBox spacing="4">
+                <ToggleButton fx:id="btnWeek" text="Week" style="-fx-pref-width: 80;"/>
+                <ToggleButton fx:id="btnMonth" text="Month" style="-fx-pref-width: 80;"/>
+            </HBox>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <HBox spacing="8" alignment="CENTER_RIGHT">
+            <Button fx:id="btnToday" text="Today" style="-fx-background-color: #e2e8f0; -fx-text-fill: #475569;"/>
+            <Button fx:id="btnPrev" text="◀" style="-fx-font-weight: bold; -fx-min-width: 40;"/>
+            <Label fx:id="lblCalendarRange" text="Nov 17 — Nov 23, 2025"
+                   style="-fx-font-weight: bold; -fx-text-fill: #1e293b; -fx-padding: 0 8;"/>
+            <Button fx:id="btnNext" text="▶" style="-fx-font-weight: bold; -fx-min-width: 40;"/>
+        </HBox>
+    </HBox>
+
+    <!-- Calendar Grid -->
+    <GridPane fx:id="calendarGrid" hgap="1" vgap="1" style="-fx-background-color: #cbd5e1; -fx-padding:1;">
+        <!-- Day headers will be populated dynamically -->
+    </GridPane>
+
+    <!-- Legend -->
+    <HBox spacing="16" alignment="CENTER">
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Rectangle width="16" height="16" fill="#3b82f6" arcWidth="4" arcHeight="4"/>
+            <Label text="Confirmed Booking" style="-fx-text-fill: #475569; -fx-font-size: 12;"/>
+        </HBox>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Rectangle width="16" height="16" fill="#f59e0b" arcWidth="4" arcHeight="4"/>
+            <Label text="Pending Approval" style="-fx-text-fill: #475569; -fx-font-size: 12;"/>
+        </HBox>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Rectangle width="16" height="16" fill="#ef4444" arcWidth="4" arcHeight="4"/>
+            <Label text="Conflict" style="-fx-text-fill: #475569; -fx-font-size: 12;"/>
+        </HBox>
+    </HBox>
+</VBox>
